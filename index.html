@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Настроение</title>
+  <meta charset="utf-8">
   <script id="quotes_json" type="application/json">
     [
       {
@@ -20,6 +21,16 @@
     ]
   </script>
 </head>
+<p id="js-quote"></p>
+
+<script>
+  window.onload = function() {
+    var quotes = JSON.parse(document.getElementById("quotes_json").innerHTML);
+    var randomNumber = Math.floor(Math.random() * quotes.length);
+    document.getElementById("js-quote").innerHTML = quotes[randomNumber].phrase;
+  };
+</script>
+
 <body>
 </body>
 </html>

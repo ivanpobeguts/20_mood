@@ -23,7 +23,7 @@
       font-size: 130%;
     }
 
-    #signature {
+    #js-signature {
       font-style: italic;
     }
 
@@ -51,6 +51,25 @@
       },
       {
         "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
+      },
+      {
+        "phrase": "Храните деньги от себя подальше"
+      },
+      {
+        "phrase": "Никогда не пробьется наверх тот, кто не делает того, что ему говорят, и тот, кто делает не больше того, что ему говорят",
+        "signature": "©Эндрю Карнеги"
+      },
+      {
+        "phrase": "Неправда, что женатые мужчины при виде красивой женщины забывают о том, что они женаты. В эту минуту их особенно удручает именно воспоминание об этом.",
+        "signature": "©Марк Твен"
+      },
+      {
+        "phrase": "Не падай духом — ушибешься!",
+        "signature": "©Эмиль Кроткий"
+      },
+      {
+        "phrase": "Не каждая серая масса имеет что-то общее с мозгом",
+        "signature": "©Станислав Ежи Лец"
       }
     ]
   </script>
@@ -58,17 +77,17 @@
 <body>
 
 <div id="quote-div">
-  <p id="phrase"></p>
-  <p id="signature"></p>
+  <p id="js-phrase"></p>
+  <p id="js-signature"></p>
 </div>
 
 <script>
   window.onload = function () {
     var quotes = JSON.parse(document.getElementById("quotes_json").innerHTML);
     var randomNumber = Math.floor(Math.random() * quotes.length);
-    document.getElementById("phrase").innerHTML = quotes[randomNumber].phrase;
+    document.getElementById("js-phrase").innerHTML = quotes[randomNumber].phrase;
     if (typeof quotes[randomNumber].signature !== "undefined") {
-      document.getElementById("signature").innerHTML = quotes[randomNumber].signature;
+      document.getElementById("js-signature").innerHTML = quotes[randomNumber].signature;
     }
   };
 

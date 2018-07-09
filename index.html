@@ -4,7 +4,7 @@
   <title>Настроение</title>
   <meta charset="utf-8">
   <style type="text/css">
-    #quote-div {
+    .quote-div {
       margin: auto;
       width: 50%;
       height: 40%;
@@ -16,14 +16,11 @@
       -moz-border-radius: 40%;
       -webkit-border-radius: 50%;
       border-radius: 50%;
-    }
-
-    p {
       font-family: "Times New Roman", Times, serif;
       font-size: 130%;
     }
 
-    #js-signature {
+    .js-signature {
       font-style: italic;
     }
 
@@ -47,7 +44,7 @@
         "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
       },
       {
-        "phrase": "Вывеска над кафе — '\u003cМы открылись\u003e'. Что-то не так. Где же '\u003c /Мы открылись\u003e'?"
+        "phrase": "Вывеска над кафе — '\u003cМы открылись\u003e'. Что-то не так. Где же '\u003c/Мы открылись\u003e'?"
       },
       {
         "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
@@ -76,18 +73,18 @@
 </head>
 <body>
 
-<div id="quote-div">
-  <p id="js-phrase"></p>
-  <p id="js-signature"></p>
+<div class="quote-div">
+  <p class="js-phrase"></p>
+  <p class="js-signature"></p>
 </div>
 
 <script>
   window.onload = function () {
-    var quotes = JSON.parse(document.getElementById("quotes_json").innerHTML);
+    var quotes = JSON.parse(document.getElementById("quotes_json").innerText);
     var randomNumber = Math.floor(Math.random() * quotes.length);
-    document.getElementById("js-phrase").innerHTML = quotes[randomNumber].phrase;
+    document.getElementsByClassName("js-phrase")[0].innerText = quotes[randomNumber].phrase;
     if (typeof quotes[randomNumber].signature !== "undefined") {
-      document.getElementById("js-signature").innerHTML = quotes[randomNumber].signature;
+      document.getElementsByClassName("js-signature")[0].innerText = quotes[randomNumber].signature;
     }
   };
 
